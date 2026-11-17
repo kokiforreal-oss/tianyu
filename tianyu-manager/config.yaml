@@ -1,0 +1,31 @@
+# Tianyu Manager 配置。
+# 游戏启动参数由用户自行填写，程序不预置任何未知参数。
+
+game:
+  exe_path: ""
+  startup_arguments: []
+
+launch:
+  # 批量启动时，相邻两个实例之间的额外间隔（秒）
+  batch_interval_seconds: 3
+  # 进程启动后若在该时间内退出，视为启动失败，并提示可能不支持多开
+  quick_exit_window_seconds: 1.0
+
+shutdown:
+  # 发送正常关闭请求后等待进程退出的时间（秒）
+  graceful_timeout_seconds: 10
+
+monitor:
+  interval_seconds: 2
+
+logging:
+  dir: logs
+  level: INFO
+
+mysql:
+  # 分析库。密码留空，实际密码请用环境变量 TIANYU_MYSQL_PASSWORD。
+  host: 127.0.0.1
+  port: 3306
+  user: ""
+  password: ""
+  database: tianyu_manager
